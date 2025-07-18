@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🚨 Alerta de Incidencia</title>
+</head>
+<body style="background-color:#fff3cd; text-align:center; padding-top:100px;">
+  <h1 style="color: #721c24;">📢 ¡Nueva Incidencia o Llamada CMO!</h1>
+
+  <audio id="alerta" autoplay>
+    <source src="https://drive.google.com/file/d/1dRDjpcXf9ZIGqc4ygryRgBX-HiGX-F9P/view?usp=sharing
+" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <script>
+    window.onload = function() {
+      const audio = document.getElementById("alerta");
+      audio.play().catch(err => {
+        console.log("🔇 El navegador bloqueó la reproducción automática.");
+      });
+    };
+  </script>
+</body>
+</html>
