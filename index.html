@@ -3,12 +3,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>🚨 Alerta de Incidencia</title>
+  <title>🚨 Alerta Automática</title>
 </head>
 <body style="background-color:#fff3cd; text-align:center; padding-top:100px;">
-  <h1 style="color: #721c24;">📢 ¡Nueva Incidencia o Llamada CMO!</h1>
+  <h1 style="color: #721c24;">📢 ¡Alerta en curso (intento automático)!</h1>
 
-  <audio id="alerta" autoplay>
+  <audio id="alerta" autoplay muted>
     <source src="Alerta.mp3" type="audio/mpeg">
     Tu navegador no soporta el audio.
   </audio>
@@ -16,10 +16,12 @@
   <script>
     window.onload = function() {
       const audio = document.getElementById("alerta");
+      audio.muted = false;
       audio.play().catch(err => {
-        console.log("🔇 El navegador bloqueó la reproducción automática.");
+        console.log("🔇 Autoplay bloqueado:", err);
       });
     };
   </script>
 </body>
 </html>
+
